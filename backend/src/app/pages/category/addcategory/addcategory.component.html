@@ -1,0 +1,30 @@
+<div class="widget-box">
+  <form [formGroup]="myForm" (ngSubmit)="saveCategory()" class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">Title :</label>
+      <div class="controls">
+        <input type="text" formControlName="cname" name="cname" placeholder="Title">
+          <div *ngIf="myForm.controls.cname.touched && myForm.controls.cname.invalid" class="alert alert-danger">
+            <div *ngIf="myForm.controls.cname.errors.required">Category title is required</div>
+            <div *ngIf="myForm.controls.cname.errors.pattern">Only Alphabet</div>
+          </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Image :</label>
+        <div class="controls">
+          <input type="file" (change)="upImage($event)" name="image">
+        </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Description</label>
+        <div class="controls">
+          <textarea formControlName="description" name="description" id="description"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary" >Save</button>
+      <a data-dismiss="modal" class="btn" href="#">Cancel</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="alert alert-error" *ngIf="errMsg">
+  <button class="close" data-dismiss="alert">×</button>
+  <strong>Error!</strong>{{errMsg}} 
+</div>
+<div *ngIf="succMsg" class="alert alert-success">
+  <button class="close" data-dismiss="alert">×</button>
+  <strong>Success!</strong> {{succMsg}}
+</div>
+<h4>Category Listing</h4>
+<div align="right">
+  <button routerLink='../addcategory' class="btn btn-primary">Add Category</button>
+</div>
+<div align="left">
+  <input type="text" [(ngModel)]="ser" placeholder="Search Here">
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="widget-box">
+      <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+        <h5>Category</h5>
+      </div>
+      <div class="widget-content nopadding">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>S.NO.</th>
+              <th>Title</th>
+              <th>Image</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr *ngFor="let data of resData | filter:ser | paginate: {itemsPerPage: 5, currentPage: p}; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{data.cname}}</td>
+                <td>{{data.description}}</td>
+                <td>
+                  <img src="http://localhost:8000/images/{{data.image}}" style="width: 50px;">
+                </td>
+                <td>
+                  <a class="btn" routerLink="../editcategory/{{data._id}}">Edit</a>
+                  &nbsp;
+                  <a type="button" class="btn btn-danger" (click)="deleteCategory(data._id)" >Delete</a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

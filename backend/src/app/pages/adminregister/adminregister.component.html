@@ -1,0 +1,63 @@
+<div id="loginbox">
+  <form [formGroup]="myForm" (ngSubmit)="register()">
+    <div class="control-group normal_text"> <h3><img src="assets/img/logo.png" alt="Logo" /></h3></div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="main_input_box">
+          <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+          <input type="text" formControlName="name" placeholder="Name" />
+          <div *ngIf="myForm.controls.name.touched && myForm.controls.name.invalid" class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <strong *ngIf="myForm.controls.name.errors.required">Error!</strong> Name is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="main_input_box">
+          <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+          <input type="text" formControlName="phone" placeholder="Phone" />
+          <div *ngIf="myForm.controls.phone.touched && myForm.controls.phone.invalid" class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <strong *ngIf="myForm.controls.phone.errors.pattern">Error!</strong> Only Number Allowed
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="main_input_box">
+          <span class="add-on bg_lg"><i class="icon-user"> </i></span>
+          <input type="text" formControlName="email" placeholder="Email" />
+          <div *ngIf="myForm.controls.email.touched && myForm.controls.email.invalid" class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <strong *ngIf="myForm.controls.email.errors.required">Error!</strong> Email is required
+            <strong *ngIf="myForm.controls.email.errors.pattern">Error!</strong> Email formate correct
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="main_input_box">
+          <span class="add-on bg_ly"><i class="icon-lock"></i></span>
+          <input type="password" formControlName="password" placeholder="Password" />
+          <div *ngIf="myForm.controls.email.touched && myForm.controls.email.invalid" class="alert alert-error">
+            <button class="close" data-dismiss="alert">×</button>
+            <strong *ngIf="myForm.controls.email.errors.required">Error!</strong> Email is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <span class="pull-right">
+        <input type="submit" [disabled]="myForm.invalid"  class="btn btn-success" value="Register">
+      </span>
+      <span class="pull-left">
+        <a href="/">Login</a>
+      </span>
+    </div>
+  </form>
+</div>
+
