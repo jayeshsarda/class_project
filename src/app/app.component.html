@@ -1,0 +1,64 @@
+<!-- <h1 align="center">
+  Welcome {{title}}
+</h1>
+<div align="center">
+  <input type="text" [(ngModel)]="title" >
+</div>
+<input type="button" value="Click" (click)="abc()">
+<button (click)="show = !show">{{show ? 'hide':'show'}}</button>
+<ul>
+  <li *ngFor = "let c of courses">{{c}}</li>
+</ul>
+
+<div align="center" *ngIf="show">Text to show and Hide</div>
+<br>
+<div align="center" *ngIf="visible;then oddClicked else evenClicked ">
+  ngIf Condition
+</div>
+<br>
+<div align = 'center'>
+    <button (click)="toggleDiv()">Toggle Button</button>
+
+    <ng-template #oddClicked>Odd Number</ng-template>
+    <ng-template #evenClicked>Even Number</ng-template>
+</div>
+
+<table align="center" border="1">
+  <tr>
+    <th>S. No</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+  </tr>
+<ng-container *ngIf = "data.length>0 else cc">
+  <tr *ngFor = "let d of data; let i=index">
+      <td>{{i+1}}</td>
+      <td>{{d.name}}</td>
+      <td>{{d.age}}</td>
+      <td>{{d.city}}</td>
+  </tr>
+</ng-container>
+<ng-template #cc>
+  <tr>
+    <td colspan="4" align="center">No record Found</td>
+  </tr>
+</ng-template>
+</table> -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Angular Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+      <li><a routerLink="/contact-us" routerLinkActive="active">Contact Us</a></li>
+      <li><a routerLink="/category/1" routerLinkActive="active">Category</a></li>
+      <li><a routerLink="/ptc" routerLinkActive="active">Parent To Child</a></li>
+      <li><a routerLink="/ctp" routerLinkActive="active">Child To Parent</a></li>
+    </ul>
+  </div>
+</nav>
+<section>
+   <router-outlet></router-outlet>
+</section>

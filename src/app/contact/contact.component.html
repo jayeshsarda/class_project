@@ -1,0 +1,25 @@
+
+<input type="button" value="Google" (click)="signInWithGoogle()">
+<div *ngIf="user != null">
+<img src="{{ user.photoUrl }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
+</div>
+<input type="button" value="SignOut" (click)="signOut()">
+<h1>Contact Us</h1>
+<table border=1>
+    <tr>
+        <td width=30%>
+            <ul>
+                <li><a routerLink="noida">Noida</a></li>
+                <li><a routerLink="delhi">Delhi</a></li>
+                <li><a routerLink="gurugram">Gurugram</a></li>
+            </ul>
+        </td>
+        <td>
+            <router-outlet></router-outlet>
+        </td>
+    </tr>
+</table>
