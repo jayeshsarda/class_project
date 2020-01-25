@@ -19,6 +19,7 @@ import { from } from 'rxjs';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchPipe } from './pipes/search.pipe';
+import { AddproductComponent } from './pages/product/addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SearchPipe } from './pipes/search.pipe';
     AddcategoryComponent,
     EditcategoryComponent,
     SearchPipe,
+    AddproductComponent,
   ],
   imports: [
     BrowserModule,

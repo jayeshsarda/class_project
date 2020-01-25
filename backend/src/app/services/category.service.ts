@@ -8,7 +8,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  addCategory (data) {
+  addCategory(data) {
     return this.http.post(`${url}addCategory`, data);
   }
 
@@ -17,7 +17,7 @@ export class CategoryService {
   }
 
   deleteCategory(id) {
-    return this.http.post(`${url}deleteCategory`, {'id': id});
+    return this.http.post(`${url}deleteCategory`, { 'id': id });
   }
 
   getByIdCategory(id) {

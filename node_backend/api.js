@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 mongoose.connect("mongodb://localhost/ecommerce",{ useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true});
 let adminModel = require('./db/adminRegister');
 let categoryModel = require('./db/category');
+let productModel = require('./db/product');
 
 
 app.post('/api/adminregister',(req, res)=>{
@@ -140,6 +141,59 @@ app.post('/api/editcatbyimage', (req, res) => {
             res.json({'err':1, 'msg': err});
         } else {
             res.json({'err':0, 'msg': 'Category Image Updated'});
+        }
+    })
+})
+
+/* PRODUCT API */
+
+app.get('/api/getProduct', (req, res) => {
+    productModel.find({}, (err, data) => {
+        if(err) {
+            res.json({'err':1, 'msg': err});
+        } else {
+            res.json({'err':0, 'msg': 'Data show successfully', 'data': data});
+        }
+    })
+})
+
+app.post('/api/addproduct', (req, res) => {
+    upload(req, res, (err) => {
+        if(err) {
+            res.json({err:1, 'msg':'Uploading Error'});
+        } else {
+            let pname = req.body.pname;
+            let category_id = req.body.category_id;
+            let file_name = req.file.filename;
+            let regular_price = req.body.regular_price;
+            let sale_price = req.body.sale_price;
+            let description = req.body.description;
+            let insert = new productModel({
+                'pname' : pname,
+                'category_id' : category_id,
+                'image': file_name,
+                'regular_price': regular_price,
+                'sale_price': sale_price,
+                'description': description,
+            });
+            insert.save((err) =>{
+                if(err) {
+                    res.json({'err':1, 'msg': 'Already Exist'});
+                } else {
+                    res.json({'err':0, 'msg': 'Product Saved'});
+                }
+            })
+        }
+    })
+})
+
+app.post('/api/deleteProduct', (req, res) => {
+    let pid = req.body.id;
+    productModel.findByIdAndRemove({_id: pid}, (err, data) => {
+        if(err) {
+            res.json({'err':1,'msg':'Error Occured'});
+        } else {
+            res.json({'err':0,'msg':'Product Deleted'});
         }
     })
 })

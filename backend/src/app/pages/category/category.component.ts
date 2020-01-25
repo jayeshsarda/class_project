@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  p=1;
+  p = 1;
   resData;
   errMsg;
   succMsg;
@@ -21,7 +21,7 @@ export class CategoryComponent implements OnInit {
         this.resData = res;
       }, err => {
         console.log(err);
-      });
+    });
   }
 
   getByIdCategory(id) {
@@ -37,7 +37,7 @@ export class CategoryComponent implements OnInit {
     this.catService.deleteCategory(id)
       .subscribe(res => {
         this.resData = res;
-        if(this.resData.err == 1) {
+        if (this.resData.err === 1) {
           this.errMsg = this.resData.msg;
         } else {
           this.succMsg = this.resData.msg;

@@ -18,17 +18,17 @@ export class AddcategoryComponent implements OnInit {
   }
 
   upImage(event) {
-    if(event.target.files.length > 0) {
+    if (event.target.files.length > 0) {
       this.imagePath = event.target.files[0];
-      //console.log(this.imagePath);
+      // console.log(this.imagePath);
     }
   }
 
   validate() {
-    this.myForm =this.fb.group({
-      cname :['', [Validators.required, Validators.pattern('[a-z A-Z]+')]],
-      description :[''],
-      image :[''],
+    this.myForm = this.fb.group({
+      cname : ['', [Validators.required, Validators.pattern('[a-z A-Z]+')]],
+      description : [''],
+      image : [''],
     });
   }
 
@@ -39,9 +39,9 @@ export class AddcategoryComponent implements OnInit {
     fdata.append('description', this.myForm.controls.description.value);
     this.catService.addCategory(fdata)
       .subscribe(res => {
-        this.router.navigate(['/dashboard/category'])
-        //console.log(res);
-      },err =>{
+        this.router.navigate(['/dashboard/category']);
+        // console.log(res);
+      }, err => {
         console.log(err);
       });
   }

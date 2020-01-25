@@ -9,6 +9,7 @@ import {AuthGuard} from './guards/auth.guard';
 import {ContainerComponent} from './pages/container/container.component';
 import { AddcategoryComponent } from './pages/category/addcategory/addcategory.component';
 import { EditcategoryComponent } from './pages/category/editcategory/editcategory.component';
+import {AddproductComponent} from './pages/product/addproduct/addproduct.component';
 
 const routes: Routes = [
   {path: '', component: AdminloginComponent},
@@ -16,9 +17,10 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], children:[
       {path: 'container', component: ContainerComponent},
       {path: 'category', component: CategoryComponent},
-      {path: 'product', component: ProductComponent},
       {path: 'addcategory', component: AddcategoryComponent},
-      {path: 'editcategory/:cid', component: EditcategoryComponent}
+      {path: 'editcategory/:cid', component: EditcategoryComponent},
+      {path: 'product', component: ProductComponent},
+      {path: 'addproduct', component: AddproductComponent}
     ]}
 ];
 
