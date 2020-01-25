@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8cec5b0-57f9-4fdb-a93f-bce0a4f598d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/pages/category/addcategory/addcategory.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/pages/category/addcategory/addcategory.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/pages/category/category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/pages/category/category.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/pages/product/product.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/pages/product/product.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/pages/product/product.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/pages/product/product.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/services/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_backend/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_backend/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/app/services/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/app/services/product.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +59,7 @@
       <workItem from="1578501586933" duration="3542000" />
       <workItem from="1578835034601" duration="2000" />
       <workItem from="1578835069533" duration="14000" />
-      <workItem from="1579942716015" duration="14615000" />
+      <workItem from="1579942716015" duration="16355000" />
     </task>
     <servers />
   </component>
